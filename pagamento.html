@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="../CSS/pagamento.css">
+</head>
+<body>
+
+    <main>
+        <div id="resumo-compra" class="texto">
+            <h1> Pagamento </h1>
+            <h2>Resumo da Compra</h2>
+            <div id="itens-resumo"></div>
+            <h3>Total a pagar: <span id="valor-total">R$ 0,00</span></h3>
+        </div>
+
+        <h2>Escolha a Forma de Pagamento</h2>
+        <select id="selecionar-pagamento">
+            <option value="">-- Selecione uma opção --</option>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="pix">Pix</option>
+        </select>
+
+        <!-- Atualize o formulário de métodos de pagamento -->
+        <div id="metodos-pagamento" style="display: none;">
+            <!-- Campos para pagamento com cartão -->
+            <div id="dados-cartao">
+                <input type="text" placeholder="Nome no Cartão" required>
+                <input type="text" placeholder="Número do Cartão" maxlength="16" required>
+                <input type="text" placeholder="Validade (MM/AA)" maxlength="5" required>
+                <input type="text" placeholder="CVV" maxlength="3" required>
+                <div><button type="submit" class="confirmcredit">Confirmar Pagamento</button></div>
+            </div>
+
+            <!-- Campos para pagamento com Pix -->
+            <div id="chave-pix" style="display: none; margin-top: 20px;">
+                <p><strong>Chave Pix:</strong></p>
+                <input type="text" id="chavePixGerada" value="a3f1d9c7-4b2e-4f6a-b78c-7a5d1e9e2f32" readonly>
+                <p style="color: green;">Chave Pix gerada com sucesso!</p>
+                <div><button type="submit" class="confirmpix">Confirmar Pagamento</button></div>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona o botão com a classe 'confirmcredit'
+    const botaoConfirmarCredito = document.querySelector('.confirmcredit');
+
+    // Função para exibir a mensagem de pagamento recebido
+    function exibirMensagemConfirmacaoCredito() {
+        alert('Pagamento com cartão de crédito recebido! Seu pedido está sendo preparado.');
+    }
+
+    // Adiciona um event listener para o clique no botão
+    botaoConfirmarCredito.addEventListener('click', exibirMensagemConfirmacaoCredito);
+});
+
+            
+            const botaoConfirmarPix = document.querySelector('.confirmpix');
+
+    // Função para exibir a mensagem de pagamento recebido
+    function exibirMensagemConfirmacao() {
+        alert('Pagamento recebido com sucesso! Seu pedido está sendo preparado.');
+    }
+
+    // Adiciona um event listener para o clique no botão
+    botaoConfirmarPix.addEventListener('click', exibirMensagemConfirmacao);
+            // Mostrar métodos de pagamento após selecionar na lista
+            const selecionarPagamento = document.getElementById('selecionar-pagamento');
+            const metodosPagamento = document.getElementById('metodos-pagamento');
+            const dadosCartao = document.getElementById('dados-cartao');
+            const chavePixDiv = document.getElementById('chave-pix');
+            const inputChavePix = document.getElementById('chavePixGerada');
+
+            // Função para copiar a chave Pix gerada
+            function copiarChavePix() {
+                inputChavePix.select();
+                document.execCommand('copy');
+                alert('Chave Pix copiada para a área de transferência!');
+            }
+
+            // Exibir métodos de pagamento com base na seleção
+            selecionarPagamento.addEventListener('change', (event) => {
+                if (event.target.value) {
+                    metodosPagamento.style.display = 'block';
+
+                    // Exibir campos correspondentes com base na seleção
+                    if (event.target.value === 'cartao') {
+                        dadosCartao.style.display = 'block';
+                        chavePixDiv.style.display = 'none';
+                    } else if (event.target.value === 'pix') {
+                        dadosCartao.style.display = 'none';
+                        chavePixDiv.style.display = 'block';
+                    }
+                } else {
+                    metodosPagamento.style.display = 'none';
+                    dadosCartao.style.display = 'none';
+                    chavePixDiv.style.display = 'none';
+                }
+            });
+
+            let itensCarrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const itensResumo = document.getElementById('itens-resumo');
+            const valorTotal = document.getElementById('valor-total');
+            
+            // Exibir itens no resumo da compra
+            let total = 0;
+            itensCarrinho.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.innerHTML = `
+                    <p><strong>${item.nome}</strong> - ${item.quantidade} x R$ ${item.preco.toFixed(2)}</p>
+                    <p>Subtotal: R$ ${(item.preco * item.quantidade).toFixed(2)}</p>
+                `;
+                itensResumo.appendChild(itemElement);
+                total += item.preco * item.quantidade;
+            });
+            valorTotal.innerText = `R$ ${total.toFixed(2)}`;
+
+            // Sistema de pagamento
+            const formPagamento = document.getElementById('form-pagamento');
+            formPagamento.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formaPagamento = document.querySelector('input[name="forma-pagamento"]:checked').value;
+                
+                if (formaPagamento === 'cartao') {
+                    alert('Pagamento com cartão de crédito realizado com sucesso!');
+                } else if (formaPagamento === 'pix') {
+                    alert('Chave Pix copiada para pagamento!');
+                }
+                
+                // Limpar o carrinho após a compra
+                localStorage.removeItem('carrinho');
+                window.location.href = 'confirmacao.html';
+            });
+        });
+    </script>
+</body>
+</html>

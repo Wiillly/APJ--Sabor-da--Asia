@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Japonês - Sabor da Ásia</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <div id="sason">
+            <div class="container">
+                <h1>Sabor da Ásia</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="/registrar">Registro</a></li>
+                        <li><a href="/login">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Experimente a verdadeira comida japonesa</h2>
+                <p class="BCT"><strong>Deliciosos pratos preparados com ingredientes frescos e de alta
+                        qualidade.</strong></p>
+
+                <a href="/produtos"><button id="orderNow">Peça Agora</button></a>
+            </div>
+        </section>
+
+        <section id="menu">
+            <div class="container">
+                <h2>Mais pedidos</h2>
+                <div class="menu-item">
+                    <h3>Sushi</h3>
+                    <p>Deliciosos sushis feitos à mão com peixe fresco.</p>
+                    <button class="menu-btn" onclick="adicionarAoPedido('Sushi')">Adicionar ao Pedido</button>
+                </div>
+                <div class="menu-item">
+                    <h3>Ramen</h3>
+                    <p>Macarrão japonês em caldo saboroso, com acompanhamentos frescos.</p>
+                    <button class="menu-btn" onclick="adicionarAoPedido('Ramen')">Adicionar ao Pedido</button>
+                </div>
+                <div class="menu-item">
+                    <h3>Temaki</h3>
+                    <p>Um cone de alga recheado com ingredientes frescos.</p>
+                    <button class="menu-btn" onclick="adicionarAoPedido('Temaki')">Adicionar ao Pedido</button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Sabor da Ásia. Todos os direitos reservados.</p>
+                <p> Contato: 11 4002-8922 </p>
+                <p> <img src="{{ url_for('static', filename='IMG/zap.png') }}" alt=""></p>
+            </div>
+        </footer>
+        </div>
+
+        <script src="script.js"></script>
+        <a href="{{ url_for('login') }}">Ir para a página de login</a>
+
+        <script>
+
+            // Função para adicionar item ao pedido
+            function adicionarAoPedido(item) {
+                alert(item + " foi adicionado ao seu pedido!");
+            }
+
+            // Função para enviar mensagem
+            function enviarMensagem(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                // Aqui você pode adicionar código para enviar a mensagem via AJAX ou outra técnica, se necessário
+
+                // Exibe uma mensagem de feedback
+                const feedbackDiv = document.getElementById('contactFeedback');
+                feedbackDiv.innerHTML = "<p>Mensagem enviada com sucesso! Obrigado por entrar em contato.</p>";
+                feedbackDiv.classList.add('success');
+
+                // Limpa o formulário
+                document.getElementById('contactForm').reset();
+            }
+
+
+            // Função para adicionar item ao pedido
+            function adicionarAoPedido(item) {
+                alert(item + " foi adicionado ao seu pedido!");
+            }
+
+            // Função para enviar mensagem
+            function enviarMensagem(event) {
+                event.preventDefault(); // Impede o envio padrão do formulário
+
+                // Aqui você pode adicionar código para enviar a mensagem via AJAX ou outra técnica, se necessário
+
+                // Exibe uma mensagem de feedback
+                const feedbackDiv = document.getElementById('contactFeedback');
+                feedbackDiv.innerHTML = "<p>Mensagem enviada com sucesso! Obrigado por entrar em contato.</p>";
+                feedbackDiv.classList.add('success');
+
+                // Limpa o formulário
+                document.getElementById('contactForm').reset();
+            }
+        </script>
+</body>
+
+</html>

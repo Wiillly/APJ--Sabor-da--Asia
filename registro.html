@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadinho - Registro de Clientes</title>
+
+    <!-- Vinculando o CSS -->
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body>
+
+    <form  id="registerForm" method="post">
+        <h1>Registrar Cliente</h1>
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+        <label for="phone">Telefone:</label>
+        <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    <script >
+      const form = document.getElementById('registerForm');
+
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value
+    };
+
+    try {
+        const response = await fetch('http://127.0.0.1:5000/registrar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            mode: 'cors',
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        alert(result.mensagem || result.erro);
+
+        // Verifica se há uma URL de redirecionamento e, em caso afirmativo, redireciona o usuário
+        if (result.redirect_url) {
+            window.location.href = result.redirect_url;
+        }
+    } catch (error) {
+        alert('Erro ao registrar cliente!');
+    }
+});
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <header>
+         Mesmo cabeçalho que eu já fiz 
+    </header>
+
+    <main>
+         Conteúdo específico da página 
+    </main>
+
+    <footer>
+         Informações do rodapé, como direitos autorais, links para redes sociais, etc. 
+    </footer> 
+    -->

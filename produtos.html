@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadinho - Produtos</title>
+    <link rel="stylesheet" href="../CSS/produtos.css">
+</head>
+
+<body>
+    <header class="cabeçalho">
+        <div id="sason">
+            <div class="container">
+                <h1>Nosso Cardapio</h1>
+                <nav>
+                    <ul>
+                        <li><a href="mercado.html">Home</a></li>
+                        <li><a href="/mercado">Menu</a></li>
+                        <li><a href="/registrar">Registro</a></li>
+                        <li><a href="/carrinho"> Carrinho</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+    </header>
+    <br>
+    <br>
+    <header>
+        <main>
+            <section class="produtos">
+
+
+
+                <div class="lista-produtos">
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/ramen.jpg') }}" alt="Ramen">
+
+                        <div class="info-produto">
+                            <h2>Ramen</h2>
+                            <p>Macarrão japonês feito em caldo saboroso, com acompanhamentos frescos.</p>
+                            <p class="preco">R$ 43,90</p>
+                            <!--<a href="detalhes-produto1.html" class="link-produto">Adicionar ao Carrinho</a>-->
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="Ramen" data-preco="43.90">Adicionar ao Carrinho</button>
+                        </div>
+
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/temaki.jpg') }}" alt="Temaki">
+                        <div class="info-produto">
+                            <h2>Temaki de Salmão</h2>
+                            <p>Temaki recheado com salmão fresco e arroz temperado.</p>
+                            <p class="preco">R$ 19,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="Temaki" data-preco="19.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/combsushi.jpg') }}" alt="Combo Sushi">
+                        <div class="info-produto">
+                            <h2>Combo Sushi</h2>
+                            <p>Conjunto de sushis variados, incluindo nigiri e maki.</p>
+                            <p class="preco">R$ 59,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="combsushi" data-preco="59.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/sashimi.jpg') }}" alt="Sashimi de Atum">
+                        <div class="info-produto">
+                            <h2>Sashimi de Atum</h2>
+                            <p>Fatias finas de atum cru servidas com molho shoyu.</p>
+                            <p class="preco">R$ 39,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="sashimi" data-preco="39.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/yakisoba.jpg') }}" alt="Yakissoba de Carne">
+                        <div class="info-produto">
+                            <h2>Yakissoba de Carne</h2>
+                            <p>Macarrão frito com legumes e tiras de carne.</p>
+                            <p class="preco">R$ 29,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="yakisoba" data-preco="29.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/camarao.jpg') }}" alt="Camarão Empanado (Ebi Furai)">
+                        <div class="info-produto">
+                            <h2>Camarão Empanado (Ebi Furai)</h2>
+                            <p>Camarões empanados e fritos servidos com molho agridoce. (Porção com 6 unidades)</p>
+                            <p class="preco">R$ 34,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="camarao" data-preco="34.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/gtoza.jpg') }}" alt="Gyoza">
+                        <div class="info-produto">
+                            <h2>Gyoza</h2>
+                            <p>Pasteizinhos japoneses recheados com carne suína e legumes. (Porção com 6 unidades)
+                            </p>
+                            <p class="preco">R$ 24,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="gtoza" data-preco="24.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150"  src="{{ url_for('static', filename='IMG/uramaki.jpg') }}" alt="Uramaki Califórnia">
+                        <div class="info-produto">
+                            <h2>Uramaki Califórnia</h2>
+                            <p>Rolo de sushi com kani, pepino e manga.</p>
+                            <p class="preco">R$ 22,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="uramaki" data-preco="22.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/Tonkatsu.jpg') }}" alt="Tonkatsu">
+                        <div class="info-produto">
+                            <h2>Tonkatsu</h2>
+                            <p>Bife de porco empanado e frito, servido com molho tonkatsu.</p>
+                            <p class="preco">R$ 36,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="tonkatsu" data-preco="36.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                    <div class="produto">
+                        <img height="100" width="150" src="{{ url_for('static', filename='IMG/dorayaki.jpg') }}" alt="Dorayaki">
+                        <div class="info-produto">
+                            <h2>Dorayaki</h2>
+                            <p>Panquecas japonesas recheadas com pasta de feijão doce.</p>
+                            <p class="preco">R$ 14,90</p>
+                            <input type="number" class="quantidade" min="1" value="1">
+                            <button class="adicionar-carrinho" data-nome="dorayaki" data-preco="14.90">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </section>
+        </main>
+    </header>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selecione todos os botões "Adicionar ao Carrinho"
+            const botoesAdicionarCarrinho = document.querySelectorAll('.adicionar-carrinho');
+            
+            // Função para adicionar um produto ao carrinho
+            function adicionarAoCarrinho(event) {
+                const botao = event.target; // O botão clicado
+                const nomeProduto = botao.getAttribute('data-nome');
+                const precoProduto = parseFloat(botao.getAttribute('data-preco'));
+                const quantidadeProduto = parseInt(botao.previousElementSibling.value); // Pega o valor da quantidade
+    
+                // Criar um objeto com os dados do produto (sem a imagem)
+                const produto = {
+                    nome: nomeProduto,
+                    preco: precoProduto,
+                    quantidade: quantidadeProduto,
+                    subtotal: precoProduto * quantidadeProduto
+                };
+    
+                // Recuperar o carrinho existente no localStorage ou criar um novo carrinho vazio
+                let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    
+                // Verificar se o produto já está no carrinho
+                const indexProduto = carrinho.findIndex(item => item.nome === nomeProduto);
+                
+                if (indexProduto !== -1) {
+                    // Se o produto já estiver no carrinho, apenas atualiza a quantidade
+                    carrinho[indexProduto].quantidade += quantidadeProduto;
+                    carrinho[indexProduto].subtotal = carrinho[indexProduto].preco * carrinho[indexProduto].quantidade;
+                } else {
+                    // Se o produto não estiver no carrinho, adiciona o novo produto
+                    carrinho.push(produto);
+                }
+    
+                // Salvar o carrinho atualizado no localStorage
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    
+                // Avisar o usuário que o produto foi adicionado
+                alert(`${nomeProduto} foi adicionado ao carrinho!`);
+            }
+    
+            // Adicionar o evento de clique para cada botão "Adicionar ao Carrinho"
+            botoesAdicionarCarrinho.forEach(botao => {
+                botao.addEventListener('click', adicionarAoCarrinho);
+            });
+        });
+    </script>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mercadinho</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <link rel="stylesheet" href="../CSS/estilo.css">
+</head>
+<body>
+
+    <form action="/login" id="loginForm" method="post">
+        <h1>Login</h1>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+        <label for="phone">Telefone (Senha):</label>
+        <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    
+
+</body>
+</html>
