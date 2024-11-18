@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    margin: 0;
+    padding: 0;
+    background-color: #ccb4bf90; /* Cor de fundo opcional */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Largura máxima opcional */
+    width: 100%;
+}
+
+header{
+    margin-top: -550px;
+    justify-items: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.texto {
+        border: 1px solid #da9797; 
+        padding: 50px;       
+        border-radius: 8px;     
+        margin: 10px;     
+        background-color: #bedac4;
+        width: 300px;    
+    }
+
+    #dados-cartao {
+        display: flex;
+        flex-direction: column; /* Coloca os itens em uma coluna, um em cima do outro */
+        align-items: center;    /* Centraliza os itens na horizontal */
+        justify-content: center; /* Centraliza os itens na vertical */
+        margin: 20px auto;      /* Adiciona margem superior e inferior e centraliza a seção */
+        width: 300px;           /* Define uma largura fixa para os inputs */
+    }
+    
+    #dados-cartao input {
+        margin-bottom: 15px; /* Adiciona espaço entre os campos */
+        padding: 10px;       /* Adiciona preenchimento interno aos campos */
+        width: 100%;         /* Faz com que os campos ocupem toda a largura da caixa */
+        box-sizing: border-box; /* Garante que o padding não afete a largura total */
+        border: 1px solid #ccc; /* Borda leve para os campos */
+        border-radius: 5px; /* Bordas arredondadas nos inputs */
+        font-size: 14px; /* Tamanho da fonte dentro dos campos */
+    }
+    
+    #finalizar-compra {
+        width: 100%; /* Faz o botão ocupar toda a largura do container */
+        padding: 12px; /* Adiciona um preenchimento ao botão */
+        margin-top: 20px; /* Espaço acima do botão */
+        background-color: #4e28a7; /* Cor de fundo verde */
+        color: white; /* Cor do texto (branco) */
+        border: none; /* Remove a borda padrão */
+        border-radius: 5px; /* Bordas arredondadas */
+        font-size: 16px; /* Tamanho da fonte do botão */
+        cursor: pointer; /* Torna o cursor um ponteiro ao passar o mouse */
+        text-align: center; /* Centraliza o texto dentro do botão */
+    }
+    
+    #finalizar-compra:hover {
+        background-color: #218838; /* Cor mais escura quando o botão é hover */
+    }
+    
+.chave{
+    
+    padding: 10px;       /* Adiciona preenchimento interno aos campos */
+    width: 100%;         /* Faz com que os campos ocupem toda a largura da caixa */
+    box-sizing: border-box; /* Garante que o padding não afete a largura total */
+    border: 1px solid #ccc; /* Borda leve para os campos */
+    border-radius: 5px; /* Bordas arredondadas nos inputs */
+    font-size: 14px; 
+}
+
+.confirmcredit{
+    padding: 10px;      
+    width: 100%;        
+    background-color: #aefabf;
+}
+
+.confirmpix{
+    padding: 10px;      
+    width: 100%;        
+    background-color: #aefabf;
+}

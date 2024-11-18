@@ -1,0 +1,89 @@
+/* Reset de margem e padding para consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #ccb4bf90; /* Cor de fundo suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right, #e6096d, #521d0f); /* Gradiente moderno */
+}
+
+/* Formulário estilizado */
+form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Título da página */
+h1 {
+    margin-bottom: 30px;
+    color: #343a40; /* Cor escura para o título */
+    font-size: 28px; /* Tamanho maior */
+    text-align: center;
+    font-weight: bold; /* Negrito para destaque */
+}
+
+/* Campos de input */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #495057; /* Cor para os rótulos */
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da; /* Borda sutil */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+input:focus {
+    border-color: #6a11cb; /* Cor da borda ao focar */
+    outline: none; /* Remove a borda padrão do navegador */
+}
+
+/* Botão estilizado */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #a2e457; /* Cor vibrante */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+}
+
+button:hover {
+    background-color: #2575fc; /* Cor ao passar o mouse */
+    transform: translateY(-2px); /* Levanta o botão levemente */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    form {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 24px; /* Ajusta o tamanho em telas pequenas */
+    }
+}
+

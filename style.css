@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+h2{
+    color: #333;
+}
+.BCT{
+    color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    background: url('sushi-hero.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.menu-item {
+    background: white;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+label, input, textarea {
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+.feedback {
+    margin-top: 10px;
+    color: green;
+}
+
+body{
+    background-image: linear-gradient(to right, #ccb4bf90, #d4b5ad9b);;
+}
+
